@@ -44,6 +44,14 @@
                     </p>
                 </div>
             </div>
+            
+         <c:forEach var="pais" items="${lista}">
+		 		${pais.id}
+				${pais.nome}
+		 		${pais.populacao}
+		 		${pais.area}
+		</c:forEach>
+            
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">

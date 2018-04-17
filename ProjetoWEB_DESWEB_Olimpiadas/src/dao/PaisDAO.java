@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Pais;
 
@@ -62,7 +63,7 @@ public class PaisDAO {
 	public Pais carregar(int id) {
 		Pais pais = new Pais();
 		pais.setId(id);
-		String sqlSelect = "SELECT nome, populacao, area FROM pais WHERE pais.id = ?";
+		String sqlSelect = "SELECT nome, populacao, area FROM pais WHERE pais.idPais = ?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
@@ -85,5 +86,28 @@ public class PaisDAO {
 			System.out.print(e1.getStackTrace());
 		}
 		return pais;
+	}
+	
+	public ArrayList<Pais> carregarTodos() {
+		ArrayList<Pais>paises = new ArrayList<>();
+		String sqlSelect = "SELECT idPais, nome, populacao, area FROM pais";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					Pais pais = new Pais();
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getDouble("populacao"));
+					pais.setArea(rs.getDouble("area"));
+					paises.add(pais);
+				} 
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return paises;
 	}
 }
