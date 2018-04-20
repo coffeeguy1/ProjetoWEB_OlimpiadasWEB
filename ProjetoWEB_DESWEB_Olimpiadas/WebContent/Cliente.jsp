@@ -36,7 +36,7 @@
                         ${pais.populacao}
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <p><strong>Area</strong>
                     </p>
                     <p>
@@ -44,7 +44,7 @@
                     </p>
                 </div>
             </div>
-            
+             
          <c:forEach var="pais" items="${lista}">
 		 		${pais.id}
 				${pais.nome}
