@@ -44,7 +44,7 @@
                     </p>
                 </div>
             </div>
-             
+          <!--Esse array de dados será colocado em outra página posteriormente-->
          <c:forEach var="pais" items="${lista}">
 		 		${pais.id}
 				${pais.nome}

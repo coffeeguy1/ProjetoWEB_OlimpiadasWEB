@@ -63,7 +63,7 @@ public class PaisDAO {
 	public Pais carregar(int id) {
 		Pais pais = new Pais();
 		pais.setId(id);
-		String sqlSelect = "SELECT nome, populacao, area FROM pais WHERE pais.idPais = ?";
+		String sqlSelect = "SELECT nome, populacao, area FROM pais WHERE pais.id = ?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
@@ -90,7 +90,7 @@ public class PaisDAO {
 	
 	public ArrayList<Pais> carregarTodos() {
 		ArrayList<Pais>paises = new ArrayList<>();
-		String sqlSelect = "SELECT idPais, nome, populacao, area FROM pais";
+		String sqlSelect = "SELECT id, nome, populacao, area FROM pais";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

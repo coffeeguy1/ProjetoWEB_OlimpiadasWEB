@@ -9,7 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp">Cadastro</a>
+                <a class="navbar-brand" href="formularioPais.jsp">Cadastro de Paises</a>
+                <a class="navbar-brand" href="buscarOlimpiadas.jsp">Buscar Olimpíadas</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
