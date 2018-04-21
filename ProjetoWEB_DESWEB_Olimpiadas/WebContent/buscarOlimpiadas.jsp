@@ -17,7 +17,7 @@
 	<c:import url="Menu.jsp"/>
     <!-- Container Principal -->
     <div id="main" class="container">
-        <h3 class="page-header">Buscar Olimpiadas</h3>
+        <h3 class="page-header">Buscar Olimpíadas</h3>
         <!-- Formulario para inclusao de clientes -->
         <form action="ManterCliente.do" method="post">
             <!-- area de campos do form -->
