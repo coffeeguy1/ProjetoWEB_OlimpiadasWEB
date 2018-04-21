@@ -18,7 +18,7 @@
 		<c:import url="Menu.jsp"/>
         <!-- Container Principal -->
         <div id="main" class="container">
-            <h3 class="page-header">Visualizar Pais #${pais.id}</h3>
+            <h3 class="page-header">Visualizar Pais ${pais.id}</h3>
             <div class="row">
                 <div class="col-md-12">
                     <p><strong>Nome</strong>

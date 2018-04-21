@@ -16,6 +16,10 @@
 	<!-- Barra superior com os menus de navegacao -->
 	<c:import url="Menu.jsp"/>
     <!-- Container Principal -->
+    
+    <div class="col-md-12" align="center">
+        <img src="img/olimpiadas.png" class="img-rouded" alt="Cinque Terre" width="200" height="200">
+    </div>
     <div id="main" class="container">
         <h3 class="page-header">Buscar Olimpíadas</h3>
         <!-- Formulario para inclusao de clientes -->
@@ -30,7 +34,7 @@
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" name="acao" value="Criar">Buscar</button>
+                    <button type="submit" class="btn btn-default" name="acao" value="Criar">Buscar</button>
                 </div>
             </div>
         </form>

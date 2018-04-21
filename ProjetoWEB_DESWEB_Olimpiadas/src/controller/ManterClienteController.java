@@ -50,7 +50,7 @@ public class ManterClienteController extends HttpServlet {
 		//enviar para o jsp
 		request.setAttribute("pais", pais);
 		RequestDispatcher view =
-		request.getRequestDispatcher("Cliente.jsp");
+		request.getRequestDispatcher("resultadoPais.jsp");
 		view.forward(request, response);
 		/*
 		PrintWriter out = response.getWriter();
