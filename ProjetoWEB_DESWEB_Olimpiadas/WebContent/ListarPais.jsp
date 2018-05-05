@@ -40,6 +40,10 @@
             <!-- /.modal -->
             <!-- Barra superior com os menus de navegação -->
 			<c:import url="Menu.jsp"/>
+			
+			<div class="col-md-12" align="center">
+        		<img src="img/olimpiadas.png" class="img-rouded" alt="Cinque Terre" width="200" height="200">
+    		</div>
             <!-- Container Principal -->
             <div id="main" class="container">
                 <form action="listar_pais.do" method="post">

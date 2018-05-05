@@ -9,14 +9,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="cadastroPais.jsp">Cadastro de Paises</a>
-                <a class="navbar-brand" href="cadastroOlimpiadas.jsp">Atualizar Olimpiadas</a>
-                <a class="navbar-brand" href="buscarOlimpiadas.jsp">Buscar Olimpíadas</a>
+                <a class="navbar-brand" href="index.jsp">Pagina Inicial</a>
             </div>
+            
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.jsp">Pagina Inicial</a>
-                    </li>
+                
+                <li><a  href="cadastroPais.jsp">Cadastro de Paises</a></li>
+                <li><a  href="ListarPais.jsp">Pesquisar Pais</a></li>
+                <li><a  href="cadastroOlimpiadas.jsp">Atualizar Olimpiadas</a></li>
+                <li><a  href="buscarOlimpiadas.jsp">Buscar Olimpíadas</a></li>
+                
                 </ul>
             </div>
         </div>
