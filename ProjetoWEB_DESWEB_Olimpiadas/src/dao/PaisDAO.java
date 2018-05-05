@@ -15,7 +15,7 @@ public class PaisDAO {
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 			stm.setString(1, pais.getNome());
-			stm.setDouble(2, pais.getPopulacao());
+			stm.setLong(2, pais.getPopulacao());
 			stm.setDouble(3, pais.getArea());
 			stm.execute();
 			String sqlQuery = "SELECT LAST_INSERT_ID()";
@@ -71,12 +71,12 @@ public class PaisDAO {
 			try (ResultSet rs = stm.executeQuery();) {
 				if (rs.next()) {
 					pais.setNome(rs.getString("nome"));
-					pais.setPopulacao(rs.getDouble("populacao"));
+					pais.setPopulacao(rs.getLong("populacao"));
 					pais.setArea(rs.getDouble("area"));
 				} else {
 					pais.setId(-1);
 					pais.setNome(null);
-					pais.setPopulacao(0.0);
+					pais.setPopulacao(0);
 					pais.setArea(0.0);
 				}
 			} catch (SQLException e) {
@@ -88,26 +88,54 @@ public class PaisDAO {
 		return pais;
 	}
 	
-	public ArrayList<Pais> carregarTodos() {
-		ArrayList<Pais>paises = new ArrayList<>();
+	public ArrayList<Pais> listarPaises() {
+		Pais pais;
+		ArrayList<Pais> lista = new ArrayList<>();
 		String sqlSelect = "SELECT id, nome, populacao, area FROM pais";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
 			try (ResultSet rs = stm.executeQuery();) {
 				while (rs.next()) {
-					Pais pais = new Pais();
+					pais = new Pais();
+					pais.setId(rs.getInt("id"));
 					pais.setNome(rs.getString("nome"));
-					pais.setPopulacao(rs.getDouble("populacao"));
+					pais.setPopulacao(rs.getLong("populacao"));
 					pais.setArea(rs.getDouble("area"));
-					paises.add(pais);
-				} 
+					lista.add(pais);
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		} catch (SQLException e1) {
 			System.out.print(e1.getStackTrace());
 		}
-		return paises;
+		return lista;
+	}
+
+	public ArrayList<Pais> listarPaises(String chave) {
+		Pais pais;
+		ArrayList<Pais> lista = new ArrayList<>();
+		String sqlSelect = "SELECT id, nome, populacao, area FROM pais where upper(nome) like ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("area"));
+					lista.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
 	}
 }

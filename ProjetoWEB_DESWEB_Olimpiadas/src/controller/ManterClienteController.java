@@ -32,7 +32,7 @@ public class ManterClienteController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pNome = request.getParameter("nome");
-		double pPopulacao = Double.parseDouble(request.getParameter("populacao"));
+		long pPopulacao = Long.parseLong(request.getParameter("populacao"));
 		double pArea = Double.parseDouble(request.getParameter("area"));
 		
 		//instanciar o javabean

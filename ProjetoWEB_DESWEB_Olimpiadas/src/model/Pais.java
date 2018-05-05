@@ -3,7 +3,7 @@ package model;
 public class Pais {
 	private int id;
 	private String nome;
-	private double populacao;
+	private long populacao;
 	private double area;
 	
 	public int getId() {
@@ -18,10 +18,10 @@ public class Pais {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public double getPopulacao() {
+	public long getPopulacao() {
 		return populacao;
 	}
-	public void setPopulacao(double populacao) {
+	public void setPopulacao(long populacao) {
 		this.populacao = populacao;
 	}
 	public double getArea() {
