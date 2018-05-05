@@ -40,8 +40,8 @@ public class ManterPaisController extends HttpServlet {
 		String pAcao = request.getParameter("acao");
 		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nome");
-		String pPopulacao = request.getParameter("populacao");
-		String pArea = request.getParameter("area");
+		//String pPopulacao = request.getParameter("populacao");
+		//String pArea = request.getParameter("area");
 		int id = -1;
 		long populacao=0;
 		double area=0.0;

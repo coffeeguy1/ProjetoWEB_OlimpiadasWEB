@@ -22,7 +22,7 @@
         	</div>
         	
             <h2>Adicionar um novo País</h2>
-          	<form action="ManterCliente.do" method="post">
+          	<form action="ManterPais.do" method="post">
                 <div class="form-group">
                 	<label for="nome">Nome</label>
                 	<input type="text" class="form-control" id="nome" name="nome" placeholder="Entre com o nome do país">
