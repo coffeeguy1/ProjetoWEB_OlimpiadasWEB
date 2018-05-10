@@ -9,13 +9,13 @@
             <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pais<span class="caret"></span></a>
             <ul class="dropdown-menu">  
                 <li><a  href="cadastroPais.jsp">Cadastro de Paises</a></li>
-                <li><a  href="ListarPais.jsp">Pesquisar Pais</a></li>
+                <li><a  href="ListarPais.jsp">Buscar Pais</a></li>
                 
             </ul>
             </li>    
             <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Olimpiadas<span class="caret"></span></a>    
             <ul class="dropdown-menu">  
-                <li><a  href="cadastroOlimpiadas.jsp">Atualizar Olimpiadas</a></li>
+                <li><a  href="cadastroOlimpiadas.jsp">Cadastro de Olimpiadas</a></li>
 	            <li><a  href="buscarOlimpiadas.jsp">Buscar Olimpíadas</a></li>
                 
             </ul>     
