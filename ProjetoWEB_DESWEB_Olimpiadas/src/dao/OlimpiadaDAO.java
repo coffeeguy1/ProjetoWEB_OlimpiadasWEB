@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Modalidade;
 import model.Olimpiada;
@@ -24,7 +25,7 @@ public class OlimpiadaDAO {
 	}
 
 	public void atualizar(Olimpiada olim) {
-		String sqlUpdate = "UPDATE pais SET nome=?, populacao=?, area=? WHERE id=?";
+		String sqlUpdate = "UPDATE olimpiada SET ouro=?, prata=?, bronze=? WHERE id=?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
@@ -55,7 +56,7 @@ public class OlimpiadaDAO {
 		
 		mod.setId(id);
 		pais.setId(id);
-		String sqlSelect = "SELECT oura, prata, bronze FROM olimpiada WHERE olimpiada.idAno = ? and olimpiada.idModalidade = ? and olimpiada.idPais = ?";
+		String sqlSelect = "SELECT ouro, prata, bronze FROM olimpiada WHERE olimpiada.idAno = ? and olimpiada.idModalidade = ? and olimpiada.idPais = ?";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
@@ -78,4 +79,30 @@ public class OlimpiadaDAO {
 		}
 		return olim;
 	}
+	
+	public ArrayList<Pais> listarPaises() {
+		Pais pais;
+		ArrayList<Pais> lista = new ArrayList<>();
+		String sqlSelect = "SELECT id, nome, populacao, area FROM pais";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("area"));
+					lista.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+	
 }
