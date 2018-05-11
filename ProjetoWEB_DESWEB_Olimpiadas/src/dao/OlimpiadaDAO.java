@@ -79,22 +79,24 @@ public class OlimpiadaDAO {
 		}
 		return olim;
 	}
-	
-	public ArrayList<Pais> listarPaises() {
+	/*
+	public ArrayList<Olimpiada> listarOlimpiada() {
+		Olimpiada olim;
+		Modalidade modali;
 		Pais pais;
-		ArrayList<Pais> lista = new ArrayList<>();
-		String sqlSelect = "SELECT id, nome, populacao, area FROM pais";
+		ArrayList<Olimpiada> lista = new ArrayList<>();
+		String sqlSelect = "select olimpiada.ouro, olimpiada.prata, olimpiada.bronze, pais.nome from olimpiada join pais on pais.id = olimpiada.pais_id;";
 		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
 			try (ResultSet rs = stm.executeQuery();) {
 				while (rs.next()) {
-					pais = new Pais();
+					olim = new Olimpiada();
 					pais.setId(rs.getInt("id"));
-					pais.setNome(rs.getString("nome"));
-					pais.setPopulacao(rs.getLong("populacao"));
-					pais.setArea(rs.getDouble("area"));
-					lista.add(pais);
+					olim.setNome(rs.getString("nome"));
+					olim.setPopulacao(rs.getLong("populacao"));
+					olim.setArea(rs.getDouble("area"));
+					lista.add(olim);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -103,6 +105,6 @@ public class OlimpiadaDAO {
 			System.out.print(e1.getStackTrace());
 		}
 		return lista;
-	}
+	}*/
 	
 }

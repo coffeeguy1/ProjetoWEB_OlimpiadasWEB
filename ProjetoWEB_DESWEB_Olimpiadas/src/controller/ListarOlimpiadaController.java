@@ -11,18 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//import model.Cliente;
 import model.Pais;
 import service.DadosService;
-//import service.VendedorService;
 
 /**
- * Servlet implementation class ListarPaisesController
+ * Servlet implementation class ListarOlimpiadasController
  */
-@WebServlet("/listar_pais.do")
+@WebServlet("/ListarOlimpiadasController")
 
-public class ListarPaisesController extends HttpServlet {
+public class ListarOlimpiadaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
