@@ -6,9 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buscar Olimpiadas</title>
+    <title>Cadastrar Olimpiadas</title>
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
   </head>
     <body>
     	<!-- Barra superior com os menus de navegacao -->
@@ -18,13 +20,30 @@
         <img src="img/olimpiadas.png" class="img-rouded" alt="Cinque Terre" width="200" height="200">
         </div>
         <div class="container">
-            <h2>Adicionar um nova Olimpíada</h2>
+            <h2>Adicionar uma nova Olimpíada</h2>
         	<form>
+        	<div class="input-group mb-3">
+        		<label for="pais">País que sediará</label><br>
+        		<select class="custom-select" id="inputGroupSelect01">
+				  <optgroup label="Verão">
+				    <option>Mustard</option>
+				    <option>Ketchup</option>
+				    <option>Relish</option>
+				  </optgroup>
+				  <optgroup label="Inverno">
+				    <option>Tent</option>
+				    <option>Flashlight</option>
+				    <option>Toilet Paper</option>
+				  </optgroup>
+				</select>
+
+        	</div>
+        	<%-- 
         	<div class="form-group">
                 <label for="pais">País que sediará</label>
                 <input type="pais" class="form-control" id="pais" placeholder="Digite o país">
         	</div>
-        
+        	---%>
         	<div class="form-group">
                 <label for="Tipo">Ano</label> <!--Aqui ficam os anos que serão selecionados e enviado para o banco, fazendo um link com os bancos de ano e olimpiadas-->
                 <input type="pais" class="form-control" id="pais" placeholder="Digite o ano dessa olimpíada">
