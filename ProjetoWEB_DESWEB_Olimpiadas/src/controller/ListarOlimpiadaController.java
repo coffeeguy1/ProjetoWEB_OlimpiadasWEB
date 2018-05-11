@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Olimpiada;
 import model.Pais;
 import service.DadosService;
 
@@ -32,13 +33,13 @@ public class ListarOlimpiadaController extends HttpServlet {
 		String chave = request.getParameter("data[search]");
 		String acao = request.getParameter("acao");
 		DadosService ds = new DadosService();
-		ArrayList<Pais> lista = null;
+		ArrayList<Olimpiada> lista = null;
 		HttpSession session = request.getSession();
 		if (acao.equals("buscar")) {
 			if (chave != null && chave.length() > 0) {
-				lista = ds.listarPaises(chave);
+				//lista = ds.listarPaises(chave);
 			} else {
-				lista = ds.listarPaises();
+				lista = ds.listarOlimpiada();
 			}
 			session.setAttribute("lista", lista);
 		} else if (acao.equals("reiniciar")) {
