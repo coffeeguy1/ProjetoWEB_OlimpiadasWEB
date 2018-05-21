@@ -24,7 +24,7 @@
         	<form>
         	<div class="input-group mb-3">
         		<label for="pais">País que sediará</label><br>
-        		<select class="custom-select" id="inputGroupSelect01">
+        		<select class="custom-select form-control" id="inputGroupSelect01">
 				  <optgroup label="Verão">
 				    <option>Mustard</option>
 				    <option>Ketchup</option>
@@ -36,7 +36,6 @@
 				    <option>Toilet Paper</option>
 				  </optgroup>
 				</select>
-
         	</div>
         	<%-- 
         	<div class="form-group">

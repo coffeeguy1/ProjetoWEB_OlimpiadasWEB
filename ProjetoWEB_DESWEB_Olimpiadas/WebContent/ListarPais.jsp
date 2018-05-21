@@ -85,7 +85,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-          					<c:forEach var="pais" items="${lista }">
+          					<c:forEach var="pais" items="${lista}">
                                        <tr>
                                             <td>
                                                ${pais.id }

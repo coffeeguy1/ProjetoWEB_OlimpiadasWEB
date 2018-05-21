@@ -27,18 +27,18 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="nome">Nome</label>
-                                <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome " value="${pais.nome }">
+                                <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="nome " value="${pais.nome}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="populacao">populaçao</label>
-                                <input type="text" class="form-control" name="populacao" id="populacao" maxlength="15"  placeholder="Digite a população" value="${pais.populacao }">
+                                <input type="text" class="form-control" name="populacao" id="populacao" maxlength="15"  placeholder="Digite a população" value="${pais.populacao}">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="area">Area</label>
-                                <input type="text" class="form-control" name="area" id="pais" required maxlength="60" placeholder="Area obrigatório" value="${pais.area }">
+                                <input type="text" class="form-control" name="area" id="pais" required maxlength="60" placeholder="Area obrigatório" value="${pais.area}">
                             </div>
                         </div>
                         <hr />

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html">
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -23,15 +23,15 @@
         	
             <h2>Adicionar um novo País</h2>
           	<form action="ManterPais.do" method="post">
-                <div class="form-group">
+                <div class="form-group col-md-12">
                 	<label for="nome">Nome</label>
                 	<input type="text" class="form-control" id="nome" name="nome" placeholder="Entre com o nome do país">
         		</div>
-       			<div class="form-group">
+       			<div class="form-group col-md-12">
 	                <label for="populacao">População</label>
 	                <input type="text" class="form-control" id="populacao" name="populacao" placeholder="Tamanho da população">
         		</div>
-        		<div class="form-group">
+        		<div class="form-group col-md-12">
                 	<label for="area">Área</label>
                 	<input type="text" class="form-control" id="area" name="area" placeholder="Tamanho do país">
         		</div>

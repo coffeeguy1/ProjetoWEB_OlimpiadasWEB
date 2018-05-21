@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sun.beans.decoder.ValueObject;
+
 import model.Pais;
 import service.PaisService;
 
@@ -19,39 +21,30 @@ import service.PaisService;
  */
 @WebServlet("/ManterPais.do")
 public class ManterPaisController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String pAcao = request.getParameter("acao");
 		String pId = request.getParameter("id");
 		String pNome = request.getParameter("nome");
-		//String pPopulacao = request.getParameter("populacao");
-		//String pArea = request.getParameter("area");
+		String pPopulacao = request.getParameter("populacao");
+		String pArea = request.getParameter("area");
+		
 		int id = -1;
-		long populacao=0;
-		double area=0.0;
+		long populacao=Long.valueOf(pPopulacao);
+		double area=Double.parseDouble(pArea);
+		
 		try {
 			id = Integer.parseInt(pId);
-			populacao = Long.parseLong(request.getParameter("populacao"));
-			area = Double.parseDouble(request.getParameter("area"));
-			
 		} catch (NumberFormatException e) {
-
+			// TODO: handle exception
 		}
 
 		Pais pais = new Pais();
@@ -95,7 +88,7 @@ public class ManterPaisController extends HttpServlet {
 		}
 		
 		view.forward(request, response);
-
+		
 	}
 
 	public int busca(Pais pais, ArrayList<Pais> lista) {
