@@ -23,15 +23,15 @@
         	
             <h2>Adicionar um novo País</h2>
           	<form action="ManterPais.do" method="post">
-                <div class="form-group col-md-12">
+                <div class="form-group">
                 	<label for="nome">Nome</label>
                 	<input type="text" class="form-control" id="nome" name="nome" placeholder="Entre com o nome do país">
         		</div>
-       			<div class="form-group col-md-12">
+       			<div class="form-group">
 	                <label for="populacao">População</label>
 	                <input type="text" class="form-control" id="populacao" name="populacao" placeholder="Tamanho da população">
         		</div>
-        		<div class="form-group col-md-12">
+        		<div class="form-group">
                 	<label for="area">Área</label>
                 	<input type="text" class="form-control" id="area" name="area" placeholder="Tamanho do país">
         		</div>

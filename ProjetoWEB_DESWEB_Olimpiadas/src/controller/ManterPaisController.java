@@ -38,11 +38,19 @@ public class ManterPaisController extends HttpServlet {
 		String pArea = request.getParameter("area");
 		
 		int id = -1;
-		long populacao=Long.valueOf(pPopulacao);
-		double area=Double.parseDouble(pArea);
+		long populacao = 0;
+		double area = 0.0;
+		
+		try {
+			populacao=Long.valueOf(pPopulacao);
+			area=Double.parseDouble(pArea);	
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		try {
 			id = Integer.parseInt(pId);
+			
 		} catch (NumberFormatException e) {
 			// TODO: handle exception
 		}

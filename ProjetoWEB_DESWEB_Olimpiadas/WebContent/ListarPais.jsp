@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <a href="CriarPais.jsp" class="btn btn-primary pull-right h2">Novo Pais</a>
+                            <a href="cadastroPais.jsp" class="btn btn-primary pull-right h2">Novo Pais</a>
                         </div>
                     </div>
                     <!-- /#top -->
@@ -101,7 +101,7 @@
                                             </td>
                                             <td class="actions">
                                                 <a class="btn btn-success btn-xs" href="ManterPais.do?acao=Visualizar&id=${pais.id }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="ManterPais.do?acao=Editar&id=${pais.id }">Editar</a>
+                                                <a class="btn btn-warning btn-xs" href="ManterPais.do?acao=Editar&id=${pais.id}">Editar</a>
                                                 <button id="btn${pais.id }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-pais="${pais.id }">Excluir</button>
                                             </td>
                                         </tr>
