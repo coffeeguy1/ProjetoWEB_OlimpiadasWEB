@@ -50,11 +50,10 @@ public class ManterPaisController extends HttpServlet {
 		
 		try {
 			id = Integer.parseInt(pId);
-			
 		} catch (NumberFormatException e) {
 			// TODO: handle exception
 		}
-
+		
 		Pais pais = new Pais();
 		pais.setId(id);
 		pais.setNome(pNome);
